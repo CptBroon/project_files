@@ -20,5 +20,6 @@ CREATE TABLE species (
     stock_no INT,
     buying_price INT,
     selling_price INT,
+    active BOOLEAN,
     subcategory_id INT REFERENCES subcategory(id)
 );
