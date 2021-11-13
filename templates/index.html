@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="log_in">
+    <div id="splash_image">
+        <img src="/static/img/12395213.jpg" alt="Pet Shop"/>
+    </div>
+    <form action="/home" id="login">
+        <div id="Username">
+            <label for="username">Username : </label>
+            <input type="text" id="username" name="username" autofocus required>
+        </div>
+        <div id="Password">
+            <label for="password">Password : </label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <input type="submit" value="Log in">
+    </form>
+</div>
+{% endblock %}
