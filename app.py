@@ -1,6 +1,9 @@
 from flask import Flask, render_template
+from controllers.species_controller import species_blueprint
 
 app = Flask(__name__)
+
+app.register_blueprint(species_blueprint)
 
 @app.route('/')
 def splash():
