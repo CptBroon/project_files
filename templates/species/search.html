@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Searching by {{criteria.capitalize()}}</h1>
+<form action="/species/results">
+    <select name="search_criteria" id="search_criteria">
+        {% for row in results %}
+        <option value={{row}}>{{row}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Search">
+</form>
+
+{% endblock %}

@@ -5,8 +5,19 @@
         <div>
             <div class="left_side"><i class="fas fa-list">Stock List</i></div>
             <div class="right_side">
-                <a href="/stocklist">All Stock</a>
-                <a href="/stocklist/search">Search Stock</a>
+                <a href="/species">All Stock</a>
+                <div>
+                    <form action="/species" method="post">
+                        <label for="criteria_option">Search Criteria: </label>
+                        <select name="criteria_option" id="criteria_option">
+                            <option value="name">Name</option>
+                            <option value="difficulty">Difficulty</option>
+                            <option value="subcategory">Subcategory</option>
+                            <option value="active">Active</option>
+                        </select>
+                        <input type="submit" value="Search Stock">
+                    </form>
+                </div>
             </div>
         </div>
         <div>
