@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/splash.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div class="container">
+        <div id="splash_image">
+            <img src="/static/img/12395213.jpg" alt="Pet Shop" id="splash_screen_image"/>
+        </div>
+        <form action="/home" id="login">
+            <div id="Username">
+                <label for="username">Username : </label>
+                <input type="text" id="username" name="username" autofocus required>
+            </div>
+            <div id="Password">
+                <label for="password">Password : </label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="submit" value="Log in">
+        </form>
+    </div>
+</body>
+</html>

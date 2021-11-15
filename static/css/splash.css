@@ -1,0 +1,32 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 5%;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+}
+
+#splash_image {
+    display: flex;
+    justify-content: center;
+}
+
+#splash_screen_image {
+    width: 60%;
+}
+
+#Username, #Password {
+    align-self: center;
+}
+
+input {
+    width: 100px;
+    align-self: center;
+}
