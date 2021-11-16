@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 100px;
+    height: 180px;
 }
 
 #splash_image {
@@ -27,6 +27,16 @@ body {
 }
 
 input {
-    width: 100px;
+    width: 150px;
+    height: 45px;
     align-self: center;
+}
+
+label {
+    font-size: 18pt;
+}
+
+#login_button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16pt;
 }

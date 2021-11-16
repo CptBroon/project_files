@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{species.name}} - {{species.subcategory.name}}</h3>
+<form action="/species/{{species.name}}/edit" method="post">
+    <input type="hidden" name="name" value={{species.name}}>
+    <input type="hidden" name="subcategory" value={{species.subcategory}}>
+    <input type="hidden" name="stock_no" value={{species.stock_no}}>
+    <label for="difficulty">Difficulty rating: </label>
+    <select name="difficulty" id="difficulty">
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Expert">Expert</option>
+    </select>
+    <label for="buying_price">Cost to buy: £</label>
+    <input type="number" name="buying_price" placeholder={{species.buying_price}}>
+    <label for="selling_price">Selling price: £</label>
+    <input type="number" name="selling_price" placeholder={{species.selling_price}}>
+    <label for="active">Active?</label>
+    <select name="active" id="active">
+        <option value="True">True</option>
+        <option value="False">False</option>
+    </select>
+    <input type="submit" value="Submit changes">
+</form>
+<h4>PLEASE NOTE - If you are intending to change the stock level, this is done on the "Log Stock change" page</h4>
+{% endblock %}

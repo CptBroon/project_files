@@ -58,4 +58,18 @@ def change_stock():
         species_to_change.increase_stock(stock_change_value)
         species_repository.update(species_to_change)
     return redirect('/species')
-    
+
+@species_blueprint.route('/species/<name>/edit')
+def edit_species_form(name):
+    species = species_repository.select("name", name)[0]
+    return render_template('species/edit_details.html', species = species, title="SMS - Edit species details")
+
+@species_blueprint.route('/species/<name>/edit', methods=['POST'])
+def update_species_details(name):
+    species = species_repository.select("name", name)[0]
+    species.difficulty = request.form['difficulty']
+    species.buying_price = request.form['buying_price']
+    species.selling_price = request.form['selling_price']
+    species.active = request.form['active']
+    species_repository.update(species)
+    return redirect('/species')

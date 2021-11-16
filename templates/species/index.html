@@ -2,8 +2,8 @@
 
 {% block content %}
     <div class="list_page">
-        <div>
-            <div class="left_side"><i class="fas fa-list">Stock List</i></div>
+        <div class="list_top_bar">
+            <div class="left_side"><h2>Species List</h2></div>
             <div class="right_side">
                 <a href="/species">All Stock</a>
                 <div>
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="table">
             <table>
                 <tr>
                     <th>Species Name</th>
@@ -32,13 +32,13 @@
                     <th>Active</th>
                 </tr>
                 {% for row in results %}
-                <tr>
+                <tr {% if row.active == False %} class="inactive" {% endif %}>
                     <td><a href="/species/{{row.name}}">{{ row.name }}</a></td>
                     <td>{{ row.subcategory.name }} </td>
                     <td>{{ row.difficulty }} </td>
                     <td>{{ row.buying_price }}</td>
                     <td>{{ row.selling_price }}</td>
-                    <td>{{ row.stock_no }}</td>
+                    <td {% if row.stock_no == 0 and row.active == True %} class="no_stock" {% elif row.stock_no == 1 %} class="low_stock" {% endif %}>{{ row.stock_no }}</td>
                     <td>{{ row.active }}</td>
                 </tr>
                 {% endfor %}
