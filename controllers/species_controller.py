@@ -17,3 +17,18 @@ def species_list_single():
     else:
         results = species_repository.select_distinct(criteria)
     return render_template("species/search.html", title = f'SMS - Search species by {criteria.capitalize()}', criteria = criteria, results=results)
+
+@species_blueprint.route('/species/results', methods=['POST'])
+def search_results():
+    criteria = request.form['search_criteria']
+    print(criteria)
+    result = request.form['search_options']
+    print(result)
+    if criteria == "subcategory":
+        subcat = subcategory_repository.select_by_name(result)
+        print(subcat)
+        results = species_repository.select("subcategory_id", subcat.id)
+        print(results)
+    else:
+        results = species_repository.select(criteria, result)
+    return render_template("species/index.html", title = "SMS - Search Results", results=results)

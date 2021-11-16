@@ -44,6 +44,14 @@ def select(id):
     subcategory = Subcategory(result['name'], result['category_id'], result['id'])
     return subcategory
 
+def select_by_name(name):
+    sql = "SELECT * FROM subcategory WHERE name = %s"
+    values = [name]
+    print(values)
+    result = run_sql(sql, values)[0]
+    subcategory = Subcategory(result['name'], result['category_id'], result['id'])
+    return subcategory
+
 def update(subcategory):
     sql = "UPDATE subcategory SET (name, category_id) = (%s, %s) WHERE id = %s"
     values = [subcategory.name, subcategory.category_id, subcategory.id]

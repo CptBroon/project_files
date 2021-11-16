@@ -76,7 +76,7 @@ species_repository.save(species12)
 species_repository.save(species13)
 species_repository.save(species14)
 
+banana = species_repository.select("name", "Labrador")
+apple = subcategory_repository.select_by_name("Large dog")
 
-
-
-
+pdb.set_trace()
