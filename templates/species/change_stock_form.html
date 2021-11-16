@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/species/change_stock_form" method="post">
+    <label for="species_name">Species name: </label>
+    <select name="species_name" id="species_name">
+        {% for row in results %}
+        <option value="{{row.name}}">{{row.name}}</option>
+        {% endfor %}
+    </select>
+    <label for="log_type">Log type </label>
+    <select name="log_type" id="log_type">
+        <option value="sale">Sale</option>
+        <option value="delivery">Delivery</option>
+    </select>
+    <input type="number" name="stock_value" id="stock_value">
+    <input type="submit" value="Log stock change">
+</form>
+{% endblock %}

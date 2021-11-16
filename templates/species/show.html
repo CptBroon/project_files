@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>{{species.name}}</h3>
+    <h4>{{species.subcategory.name}}</h4>
+    <p> Difficulty: {{species.difficulty}}</p>
+    <p>Current stock: {{species.stock_no}}</p>
+    <p>Buying Price: £{{species.buying_price}}</p>
+    <p>Selling Price: £{{species.selling_price}}</p>
+    {% if species.active == True %}
+        <i class="fas fa-check-square">Active</i>
+    {% else %}
+        <i class="fas fa-times-square">Unactive</i>
+    {% endif %}
+{% endblock %}

@@ -9,3 +9,12 @@ class Species:
         self.selling_price = selling_price
         self.active = active
         self.id = id
+        
+    def increase_stock(self, delivery_amount):
+        self.stock_no += delivery_amount
+        
+    def reduce_stock(self, sale_amount):
+        if self.stock_no >= sale_amount:
+            self.stock_no -= sale_amount
+        else:
+            pass

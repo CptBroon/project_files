@@ -11,11 +11,10 @@ def delete(id):
     run_sql(sql, values)
     
 def save(subcategory):
-    sql = "INSERT INTO subcategory (name) VALUES (%s) RETURNING *"
-    values = [subcategory.name]
+    sql = "INSERT INTO subcategory (name, category_id) VALUES (%s, %s) RETURNING *"
+    values = [subcategory.name, subcategory.category.id]
     results = run_sql(sql, values)
-    id = results[0]['id']
-    subcategory.id = id
+    subcategory.id = results[0]['id']
     return subcategory
 
 def select_all():

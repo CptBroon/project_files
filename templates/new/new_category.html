@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Existing Categories</h3>
+    <ul>
+    {% for row in categories %}
+        <li>{{row.name}}</li>
+    {% endfor %}
+    </ul>
+    <h4>WARNING: PLEASE DO NOT CREATE A CATEGORY IF IT EXISTS ALREADY</h4>
+    <form action="/new/category" method="post">
+        <input type="text" name="name" placeholder="Category name">
+        <input type="submit" value="Create new Category">
+    </form>
+{% endblock %}

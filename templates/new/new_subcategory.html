@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Existing Subcategories</h3>
+<ul>
+    {% for row in subcategories %}
+    <li>{{row.name}}</li>
+    {% endfor %}
+</ul>
+<h4>WARNING: PLEASE DO NOT CREATE A SUBCATEGORY IF IT EXISTS ALREADY</h4>
+<form action="/new/subcategory" method="post">
+    <select name="category" id="category">
+        {% for row in categories %}
+        <option value={{row.id}}>{{row.name}}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="name" placeholder="Subcategory name">
+    <input type="submit" value="Create new Subcategory">
+</form>
+{% endblock %}
