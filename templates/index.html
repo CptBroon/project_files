@@ -1,21 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div>
+    <div class="cards">
         <ul class="home_buttons">
             <li>
                 <a href="/species" class="link_card">
-                    <i class="fas fa-list">Stock List</i>
+                    <i class="fas fa-list"></i>
+                    <p>Species List</p>
                 </a>
             </li>
             <li>
                 <a href="/species/change_stock_form" class="link_card">
-                    <i class="fas fa-box-open">Log stock change</i>
+                    <i class="fas fa-envelope-open"></i>
+                    <p>Log Stock Change</p>
                 </a>
             </li>
             <li>
                 <a href="/new" class="link_card">
-                    <i class="fas fa-plus-square">Add new details</i>
+                    <i class="fas fa-plus-square"></i>
+                    <p>Add new details</p>
                 </a>
             </li>
         </ul>

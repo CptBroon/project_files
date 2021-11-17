@@ -6,16 +6,18 @@
             <div class="left_side"><h2>Species List</h2></div>
             <div class="right_side">
                 <a href="/species">All Stock</a>
-                <div>
-                    <form action="/species" method="post">
+                <div id="search_area">
+                    <form action="/species" id="search_form" method="post">
                         <label for="criteria_option">Search Criteria: </label>
-                        <select name="criteria_option" id="criteria_option">
-                            <option value="name">Name</option>
-                            <option value="difficulty">Difficulty</option>
-                            <option value="subcategory">Subcategory</option>
-                            <option value="active">Active</option>
-                        </select>
-                        <input type="submit" value="Search Stock">
+                        <div id="search_select">
+                            <select name="criteria_option" id="criteria_option">
+                                <option value="name">Name</option>
+                                <option value="difficulty">Difficulty</option>
+                                <option value="subcategory">Subcategory</option>
+                                <option value="active">Active</option>
+                            </select>
+                            <input type="submit" id="search_submit" value="Search Stock">
+                        </div>
                     </form>
                 </div>
             </div>
