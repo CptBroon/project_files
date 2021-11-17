@@ -2,7 +2,7 @@
 
 {% block content %}
 <h3>{{species.name}} - {{species.subcategory.name}}</h3>
-<form action="/species/{{species.name}}/edit" method="post">
+<form action="/species/{{species.name}}/edit" class="edit_details_form" method="post">
     <input type="hidden" name="name" value={{species.name}}>
     <input type="hidden" name="subcategory" value={{species.subcategory}}>
     <input type="hidden" name="stock_no" value={{species.stock_no}}>
@@ -21,7 +21,7 @@
         <option value="True">True</option>
         <option value="False">False</option>
     </select>
-    <input type="submit" value="Submit changes">
+    <input type="submit" id="edit_details_submit" value="Submit changes">
 </form>
 <h4>PLEASE NOTE - If you are intending to change the stock level, this is done on the "Log Stock change" page</h4>
 {% endblock %}

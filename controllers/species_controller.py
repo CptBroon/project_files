@@ -43,7 +43,7 @@ def show_species_info(name):
 @species_blueprint.route('/species/change_stock_form')
 def stock_increase_form():
     species_list = species_repository.select_all()
-    return render_template('species/change_stock_form.html', results=species_list)
+    return render_template('species/change_stock_form.html', title="SMS - Log sale or delivery", results=species_list)
 
 @species_blueprint.route('/species/change_stock_form', methods=['POST'])
 def change_stock():

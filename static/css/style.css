@@ -28,9 +28,18 @@ footer {
     width: 450px;
 }
 
-#search_form {
+#search_criteria_form {
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+#search_form {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
 }
 
@@ -45,7 +54,7 @@ footer {
     font-size: 20pt;
 }
 
-#search_submit {
+.search_submit {
     padding: 20px;
     font-size: 20px;
     background-color: #83C9F4;
@@ -53,9 +62,16 @@ footer {
     border-radius: 15px;
     color: white;
     font-size: 20pt;
+    width: 200px
 }
 
-#search_submit:hover {
+#search_options {
+    width:250px;
+    height:50px;
+    font-size: 20px;
+}
+
+.search_submit:hover {
     background-color: #7681B3;
 }
 
@@ -139,15 +155,23 @@ td {
     height: 50px
 }
 
-/* i {
-    font-style: none;
-} */
-
 i.fas {
     font-family: FontAwesome;
     color: white;
     height: 20px;
     width:20px
+}
+
+i.far {
+    font-family: FontAwesome;
+}
+
+.edit_details_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
 }
 
 .home_buttons {
@@ -225,7 +249,16 @@ a.link_card:hover {
 }
 
 .low_stock {
-    background-color: yellow;
+    background-color: orange;
+}
+
+.subtitle {
+    text-align: left;
+    padding-left: 5%
+}
+
+.details {
+    padding-left: 10%
 }
 
 .no_stock {
@@ -241,4 +274,116 @@ a.link_card:hover {
     color: #7681B3;
     text-decoration: none;
     font-style: italic;
+}
+
+select {
+    height: 50px;
+    width: 200px;
+    font-size: 20pt;
+}
+
+input[type=number] {
+    width: 200px;
+    height: 50px;
+    font-size: 20pt;
+}
+
+input[type=text] {
+    height: 50px;
+    font-size: 20pt;
+}
+
+.edit_button {
+    margin: 20px 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.edit_button > a {
+    background-color: #83C9F4;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.edit_button > a:hover {
+    background-color: #7681B3;
+}
+
+#edit_details_submit {
+    background-color: #83C9F4;
+    color: white;
+    border-radius: 15px;
+    border: 0;
+    font-size: 20pt;
+    padding: 20px
+}
+
+#edit_details_submit:hover {
+    background-color: #7681B3;
+}
+
+.new_button {
+    background-color: #83C9F4;
+    color: white;
+    border-radius: 15px;
+    border: 0;
+    font-size: 20pt;
+    padding: 20px
+}
+
+.new_button:hover {
+    background-color: #7681B3;
+}
+
+.existing_options {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.existing_options > li {
+    width: 300px;
+}
+
+.new_species_form {
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    width: 50%
+}
+
+.species_form_section {
+    margin:15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.species_form_section > label {
+    align-self: center;
+}
+
+#new_species_submit_button {
+    display: flex;
+    justify-content: center;
+}
+
+#stock_change_form {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#stock_change_submit {
+    background-color: #83C9F4;
+    color: white;
+    padding: 20px;
+    border: 0;
+    border-radius: 15px;
+    font-size: 20pt;
 }

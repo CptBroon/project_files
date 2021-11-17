@@ -2,38 +2,54 @@
 
 {% block content %}
 <h3>Existing Species</h3>
-<ul>
+<ul class="existing_options">
     {% for row in species %}
     <li>{{row.name}}</li>
     {% endfor %}
 </ul>
 <h4>WARNING: PLEASE DO NOT CREATE A SPECIES IF IT EXISTS ALREADY</h4>
-<form action="/new/species" method="post">
-    <label for="subcategory">Subcategory: </label>
-    <select name="subcategory" id="subcategory">
-        {% for row in subcategories %}
-        <option value={{row.id}}>{{row.name}}</option>
-        {% endfor %}
-    </select>
-    <label for="name">Name: </label>
-    <input type="text" name="name" placeholder="Species name">
-    <label for="difficulty">Difficulty level: </label>
-    <select name="difficulty" id="difficulty">
-        {% for difficulty in possible_difficulties %}
-        <option value="{{difficulty}}">{{difficulty.capitalize()}}</option>
-        {% endfor %}
-    </select>
-    <label for="stock_no">Stock: </label>
-    <input type="number" name="stock_no" placeholder="Initial Stock">
-    <label for="buying_price">Cost: </label>
-    <input type="number" name="buying_price" placeholder="Buying Price">
-    <label for="selling_price">Price: </label>
-    <input type="number" name="selling_price" placeholder="Selling Price">
-    <label for="active">Initially Active?</label>
-    <select name="active" id="active">
-        <option value="true">True</option>
-        <option value="false">False</option>
-    </select>
-    <input type="submit" value="Create new Species">
+<form action="/new/species" class="new_species_form" method="post">
+    <div class="species_form_section">
+        <label for="subcategory">Subcategory: </label>
+        <select name="subcategory" id="subcategory">
+            {% for row in subcategories %}
+            <option value={{row.id}}>{{row.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="species_form_section">
+        <label for="name">Name: </label>
+        <input type="text" name="name" placeholder="Species name">
+    </div>
+    <div class="species_form_section">
+        <label for="difficulty">Difficulty level: </label>
+        <select name="difficulty" id="difficulty">
+            {% for difficulty in possible_difficulties %}
+            <option value="{{difficulty}}">{{difficulty.capitalize()}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="species_form_section">
+        <label for="stock_no">Stock: </label>
+        <input type="number" name="stock_no" placeholder="Initial Stock">
+    </div>
+    <div class="species_form_section">
+        <label for="buying_price">Cost: </label>
+        <input type="number" name="buying_price" placeholder="Buying Price">
+    </div>
+    <div class="species_form_section">
+        <label for="selling_price">Price: </label>
+        <input type="number" name="selling_price" placeholder="Selling Price">
+    </div>
+    <div class="species_form_section">
+        <label for="active">Initially Active?</label>
+        <select name="active" id="active">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    </div>
+    <div id="new_species_submit_button">
+        <input type="submit" class="new_button" value="Create new Species">
+    </div>
 </form>
 {% endblock %}

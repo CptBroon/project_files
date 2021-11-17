@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="title">    
     <h3>{{species.name}}</h3>
-    <h4>{{species.subcategory.name}}</h4>
-    <p> Difficulty: {{species.difficulty}}</p>
+</div>
+<div class="subtitle">
+    <h4>Subcategory: {{species.subcategory.name}}</h4>
+</div>
+<div class="details">
+    <p>Difficulty: {{species.difficulty}}</p>
     <p>Current stock: {{species.stock_no}}</p>
     <p>Buying Price: £{{species.buying_price}}</p>
     <p>Selling Price: £{{species.selling_price}}</p>
+
     {% if species.active == True %}
-        <i class="fas fa-check-square">Active</i>
+        <i class="fas fa-check-square" style="color:green">Active</i>
     {% else %}
-        <i class="fas fa-times-square">Unactive</i>
+        <i class="far fa-times-circle" style="color:red">Inactive</i>
     {% endif %}
-    <a href="/species/{{species.name}}/edit">Edit Species</a>
+</div>
+<div class="edit_button">
+    <a href="/species/{{species.name}}/edit" id="edit_button">Edit Species</a>
+</div>
 {% endblock %}

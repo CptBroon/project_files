@@ -2,7 +2,7 @@
 
 {% block content %}
 <h3>Existing Subcategories</h3>
-<ul>
+<ul class="existing_options">
     {% for row in subcategories %}
     <li>{{row.name}}</li>
     {% endfor %}
@@ -15,6 +15,6 @@
         {% endfor %}
     </select>
     <input type="text" name="name" placeholder="Subcategory name">
-    <input type="submit" value="Create new Subcategory">
+    <input type="submit" class="new_button" value="Create new Subcategory">
 </form>
 {% endblock %}

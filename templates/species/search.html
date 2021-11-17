@@ -3,17 +3,15 @@
 {% block content %}
 
 <h1>Searching by {{criteria.capitalize()}}</h1>
-<form action="/species/results" method="post">
-    <label for="search_criteria">Possible options for</label>
-    <select name="search_criteria" id="search_criteria">
-        <option value={{criteria}}>{{criteria.capitalize()}}</option>
-    </select>
+<form action="/species/results" id="search_form" method="post">
+    <label for="search_criteria">Possible options for {{criteria.capitalize()}}: </label>
+    <input type="hidden" name ="search_criteria" value={{criteria}}>
     <select name="search_options" id="search_options">
         {% for row in results %}
         <option value="{{row}}">{{row}}</option>
         {% endfor %}
     </select>
-    <input type="submit" value="Search">
+    <input type="submit" class="search_submit" value="Search">
 </form>
 
 {% endblock %}
